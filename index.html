@@ -13,7 +13,7 @@
   
   // Contador de aberturas deve permitir popups
   var counter = document.getElementById("counter");
-  var formulario = document.getElementById("forms").value;
+  var formulario = document.getElementById("forms");
   var T = 0;
   
   // Delay para fechar aba
@@ -333,7 +333,7 @@ const acoes = [
 
   function abreAbas(N) {
       let pesquisa = gerarPesquisa();
-      let template = `https://www.bing.com/search?q=${encodeURIComponent(pesquisa)}&form=${formulario}&PC=EDGEESS`;
+      let template = `https://www.bing.com/search?q=${encodeURIComponent(pesquisa)}&form=${formulario.value}&PC=EDGEESS`;
         let counterValue = counter.textContent;
       
       if (N > 0) {
@@ -358,6 +358,5 @@ const acoes = [
   var botao = document.getElementById("button");
   qtd = document.getElementById("qtd");
   botao.addEventListener("click", () => abreAbas(qtd.value));
-
   </script>
 </html>
